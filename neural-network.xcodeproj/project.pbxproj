@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		119CF1382BC6C46F005FEF6B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 119CF1372BC6C46F005FEF6B /* main.cpp */; };
+		119CF1402BC6C520005FEF6B /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 119CF13F2BC6C520005FEF6B /* libSDL2-2.0.0.dylib */; };
+		119CF1412BC6C520005FEF6B /* libSDL2-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 119CF13F2BC6C520005FEF6B /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		119CF1932BC6CB45005FEF6B /* matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 119CF1912BC6CB45005FEF6B /* matrix.cpp */; };
+		119CF1972BC6DA2D005FEF6B /* neural_network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 119CF1952BC6DA2D005FEF6B /* neural_network.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,11 +24,106 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		119CF1422BC6C520005FEF6B /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				119CF1412BC6C520005FEF6B /* libSDL2-2.0.0.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		119CF1342BC6C46F005FEF6B /* neural-network */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "neural-network"; sourceTree = BUILT_PRODUCTS_DIR; };
 		119CF1372BC6C46F005FEF6B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		119CF13F2BC6C520005FEF6B /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../opt/homebrew/Cellar/sdl2/2.30.2/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		119CF1432BC6C55D005FEF6B /* SDL_opengles2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengles2.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_opengles2.h; sourceTree = "<group>"; };
+		119CF1442BC6C55D005FEF6B /* SDL_opengles2_gl2platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengles2_gl2platform.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_opengles2_gl2platform.h; sourceTree = "<group>"; };
+		119CF1452BC6C55D005FEF6B /* SDL_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_error.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_error.h; sourceTree = "<group>"; };
+		119CF1462BC6C55D005FEF6B /* SDL_opengles2_gl2ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengles2_gl2ext.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_opengles2_gl2ext.h; sourceTree = "<group>"; };
+		119CF1472BC6C55D005FEF6B /* SDL_test_md5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_md5.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_md5.h; sourceTree = "<group>"; };
+		119CF1482BC6C55D005FEF6B /* SDL_vulkan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_vulkan.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_vulkan.h; sourceTree = "<group>"; };
+		119CF1492BC6C55D005FEF6B /* SDL_thread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_thread.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_thread.h; sourceTree = "<group>"; };
+		119CF14A2BC6C55D005FEF6B /* SDL_blendmode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_blendmode.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_blendmode.h; sourceTree = "<group>"; };
+		119CF14B2BC6C55D005FEF6B /* SDL_test_random.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_random.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_random.h; sourceTree = "<group>"; };
+		119CF14C2BC6C55D005FEF6B /* SDL_render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_render.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_render.h; sourceTree = "<group>"; };
+		119CF14D2BC6C55D005FEF6B /* SDL_metal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_metal.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_metal.h; sourceTree = "<group>"; };
+		119CF14E2BC6C55D005FEF6B /* SDL_opengl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengl.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_opengl.h; sourceTree = "<group>"; };
+		119CF14F2BC6C55D005FEF6B /* SDL_stdinc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_stdinc.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_stdinc.h; sourceTree = "<group>"; };
+		119CF1502BC6C55D005FEF6B /* SDL_test_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_common.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_common.h; sourceTree = "<group>"; };
+		119CF1512BC6C55D005FEF6B /* SDL_name.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_name.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_name.h; sourceTree = "<group>"; };
+		119CF1522BC6C55D005FEF6B /* SDL_touch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_touch.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_touch.h; sourceTree = "<group>"; };
+		119CF1532BC6C55D005FEF6B /* SDL_messagebox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_messagebox.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_messagebox.h; sourceTree = "<group>"; };
+		119CF1542BC6C55D005FEF6B /* SDL_bits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_bits.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_bits.h; sourceTree = "<group>"; };
+		119CF1552BC6C55D005FEF6B /* SDL_atomic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_atomic.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_atomic.h; sourceTree = "<group>"; };
+		119CF1562BC6C55D005FEF6B /* SDL_main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_main.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_main.h; sourceTree = "<group>"; };
+		119CF1572BC6C55D005FEF6B /* SDL_revision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_revision.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_revision.h; sourceTree = "<group>"; };
+		119CF1582BC6C55D005FEF6B /* SDL_test_log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_log.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_log.h; sourceTree = "<group>"; };
+		119CF1592BC6C55D005FEF6B /* SDL_test_memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_memory.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_memory.h; sourceTree = "<group>"; };
+		119CF15A2BC6C55D005FEF6B /* SDL_filesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_filesystem.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_filesystem.h; sourceTree = "<group>"; };
+		119CF15B2BC6C55D005FEF6B /* SDL_pixels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_pixels.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_pixels.h; sourceTree = "<group>"; };
+		119CF15C2BC6C55D005FEF6B /* SDL_test_compare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_compare.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_compare.h; sourceTree = "<group>"; };
+		119CF15D2BC6C55E005FEF6B /* SDL_mouse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_mouse.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_mouse.h; sourceTree = "<group>"; };
+		119CF15E2BC6C55E005FEF6B /* SDL_events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_events.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_events.h; sourceTree = "<group>"; };
+		119CF15F2BC6C55E005FEF6B /* SDL_shape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_shape.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_shape.h; sourceTree = "<group>"; };
+		119CF1602BC6C55E005FEF6B /* SDL_test_harness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_harness.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_harness.h; sourceTree = "<group>"; };
+		119CF1612BC6C55E005FEF6B /* SDL_keyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_keyboard.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_keyboard.h; sourceTree = "<group>"; };
+		119CF1622BC6C55E005FEF6B /* SDL_gesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_gesture.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_gesture.h; sourceTree = "<group>"; };
+		119CF1632BC6C55E005FEF6B /* SDL_gamecontroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_gamecontroller.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_gamecontroller.h; sourceTree = "<group>"; };
+		119CF1642BC6C55E005FEF6B /* SDL_keycode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_keycode.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_keycode.h; sourceTree = "<group>"; };
+		119CF1652BC6C55E005FEF6B /* SDL_system.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_system.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_system.h; sourceTree = "<group>"; };
+		119CF1662BC6C55E005FEF6B /* SDL_opengles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengles.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_opengles.h; sourceTree = "<group>"; };
+		119CF1672BC6C55E005FEF6B /* SDL_quit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_quit.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_quit.h; sourceTree = "<group>"; };
+		119CF1682BC6C55E005FEF6B /* SDL_opengles2_gl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengles2_gl2.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_opengles2_gl2.h; sourceTree = "<group>"; };
+		119CF1692BC6C55E005FEF6B /* SDL_hidapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_hidapi.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_hidapi.h; sourceTree = "<group>"; };
+		119CF16A2BC6C55E005FEF6B /* SDL_timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_timer.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_timer.h; sourceTree = "<group>"; };
+		119CF16B2BC6C55E005FEF6B /* SDL_version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_version.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_version.h; sourceTree = "<group>"; };
+		119CF16C2BC6C55E005FEF6B /* SDL_test_images.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_images.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_images.h; sourceTree = "<group>"; };
+		119CF16D2BC6C55E005FEF6B /* SDL_opengles2_khrplatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengles2_khrplatform.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_opengles2_khrplatform.h; sourceTree = "<group>"; };
+		119CF16E2BC6C55E005FEF6B /* SDL_egl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_egl.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_egl.h; sourceTree = "<group>"; };
+		119CF16F2BC6C55E005FEF6B /* SDL_power.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_power.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_power.h; sourceTree = "<group>"; };
+		119CF1702BC6C55E005FEF6B /* SDL_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_config.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_config.h; sourceTree = "<group>"; };
+		119CF1712BC6C55E005FEF6B /* SDL_loadso.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_loadso.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_loadso.h; sourceTree = "<group>"; };
+		119CF1722BC6C55E005FEF6B /* SDL_haptic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_haptic.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_haptic.h; sourceTree = "<group>"; };
+		119CF1732BC6C55E005FEF6B /* SDL_opengl_glext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_opengl_glext.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_opengl_glext.h; sourceTree = "<group>"; };
+		119CF1742BC6C55E005FEF6B /* SDL_joystick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_joystick.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_joystick.h; sourceTree = "<group>"; };
+		119CF1752BC6C55E005FEF6B /* SDL_test_fuzzer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_fuzzer.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_fuzzer.h; sourceTree = "<group>"; };
+		119CF1762BC6C55E005FEF6B /* SDL_rwops.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_rwops.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_rwops.h; sourceTree = "<group>"; };
+		119CF1772BC6C55E005FEF6B /* SDL_test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test.h; sourceTree = "<group>"; };
+		119CF1782BC6C55E005FEF6B /* SDL_syswm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_syswm.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_syswm.h; sourceTree = "<group>"; };
+		119CF1792BC6C55E005FEF6B /* begin_code.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = begin_code.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/begin_code.h; sourceTree = "<group>"; };
+		119CF17A2BC6C55E005FEF6B /* SDL_surface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_surface.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_surface.h; sourceTree = "<group>"; };
+		119CF17B2BC6C55E005FEF6B /* close_code.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = close_code.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/close_code.h; sourceTree = "<group>"; };
+		119CF17C2BC6C55E005FEF6B /* SDL_test_assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_assert.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_assert.h; sourceTree = "<group>"; };
+		119CF17D2BC6C55E005FEF6B /* SDL_misc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_misc.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_misc.h; sourceTree = "<group>"; };
+		119CF17E2BC6C55E005FEF6B /* SDL_hints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_hints.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_hints.h; sourceTree = "<group>"; };
+		119CF17F2BC6C55E005FEF6B /* SDL_clipboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_clipboard.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_clipboard.h; sourceTree = "<group>"; };
+		119CF1802BC6C55E005FEF6B /* SDL_platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_platform.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_platform.h; sourceTree = "<group>"; };
+		119CF1812BC6C55E005FEF6B /* SDL_guid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_guid.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_guid.h; sourceTree = "<group>"; };
+		119CF1822BC6C55E005FEF6B /* SDL_rect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_rect.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_rect.h; sourceTree = "<group>"; };
+		119CF1832BC6C55E005FEF6B /* SDL_scancode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_scancode.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_scancode.h; sourceTree = "<group>"; };
+		119CF1842BC6C55E005FEF6B /* SDL_test_crc32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_crc32.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_crc32.h; sourceTree = "<group>"; };
+		119CF1852BC6C55E005FEF6B /* SDL_locale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_locale.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_locale.h; sourceTree = "<group>"; };
+		119CF1862BC6C55E005FEF6B /* SDL_test_font.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_test_font.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_test_font.h; sourceTree = "<group>"; };
+		119CF1872BC6C55E005FEF6B /* SDL_cpuinfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_cpuinfo.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_cpuinfo.h; sourceTree = "<group>"; };
+		119CF1882BC6C55E005FEF6B /* SDL_assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_assert.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_assert.h; sourceTree = "<group>"; };
+		119CF1892BC6C55E005FEF6B /* SDL_endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_endian.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_endian.h; sourceTree = "<group>"; };
+		119CF18A2BC6C55E005FEF6B /* SDL_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_types.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_types.h; sourceTree = "<group>"; };
+		119CF18B2BC6C55E005FEF6B /* SDL_mutex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_mutex.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_mutex.h; sourceTree = "<group>"; };
+		119CF18C2BC6C55E005FEF6B /* SDL_video.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_video.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_video.h; sourceTree = "<group>"; };
+		119CF18D2BC6C55E005FEF6B /* SDL_audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_audio.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_audio.h; sourceTree = "<group>"; };
+		119CF18E2BC6C55E005FEF6B /* SDL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL.h; sourceTree = "<group>"; };
+		119CF18F2BC6C55E005FEF6B /* SDL_log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_log.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_log.h; sourceTree = "<group>"; };
+		119CF1902BC6C55E005FEF6B /* SDL_sensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_sensor.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_sensor.h; sourceTree = "<group>"; };
+		119CF1912BC6CB45005FEF6B /* matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = matrix.cpp; sourceTree = "<group>"; };
+		119CF1922BC6CB45005FEF6B /* matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = matrix.hpp; sourceTree = "<group>"; };
+		119CF1942BC6CF84005FEF6B /* neural-network.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "neural-network.entitlements"; sourceTree = "<group>"; };
+		119CF1952BC6DA2D005FEF6B /* neural_network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = neural_network.cpp; sourceTree = "<group>"; };
+		119CF1962BC6DA2D005FEF6B /* neural_network.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = neural_network.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119CF1402BC6C520005FEF6B /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +143,7 @@
 			children = (
 				119CF1362BC6C46F005FEF6B /* neural-network */,
 				119CF1352BC6C46F005FEF6B /* Products */,
+				119CF13E2BC6C51F005FEF6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +158,100 @@
 		119CF1362BC6C46F005FEF6B /* neural-network */ = {
 			isa = PBXGroup;
 			children = (
+				119CF1942BC6CF84005FEF6B /* neural-network.entitlements */,
 				119CF1372BC6C46F005FEF6B /* main.cpp */,
+				119CF1912BC6CB45005FEF6B /* matrix.cpp */,
+				119CF1922BC6CB45005FEF6B /* matrix.hpp */,
+				119CF1952BC6DA2D005FEF6B /* neural_network.cpp */,
+				119CF1962BC6DA2D005FEF6B /* neural_network.hpp */,
 			);
 			path = "neural-network";
+			sourceTree = "<group>";
+		};
+		119CF13E2BC6C51F005FEF6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				119CF1792BC6C55E005FEF6B /* begin_code.h */,
+				119CF17B2BC6C55E005FEF6B /* close_code.h */,
+				119CF1882BC6C55E005FEF6B /* SDL_assert.h */,
+				119CF1552BC6C55D005FEF6B /* SDL_atomic.h */,
+				119CF18D2BC6C55E005FEF6B /* SDL_audio.h */,
+				119CF1542BC6C55D005FEF6B /* SDL_bits.h */,
+				119CF14A2BC6C55D005FEF6B /* SDL_blendmode.h */,
+				119CF17F2BC6C55E005FEF6B /* SDL_clipboard.h */,
+				119CF1702BC6C55E005FEF6B /* SDL_config.h */,
+				119CF1872BC6C55E005FEF6B /* SDL_cpuinfo.h */,
+				119CF16E2BC6C55E005FEF6B /* SDL_egl.h */,
+				119CF1892BC6C55E005FEF6B /* SDL_endian.h */,
+				119CF1452BC6C55D005FEF6B /* SDL_error.h */,
+				119CF15E2BC6C55E005FEF6B /* SDL_events.h */,
+				119CF15A2BC6C55D005FEF6B /* SDL_filesystem.h */,
+				119CF1632BC6C55E005FEF6B /* SDL_gamecontroller.h */,
+				119CF1622BC6C55E005FEF6B /* SDL_gesture.h */,
+				119CF1812BC6C55E005FEF6B /* SDL_guid.h */,
+				119CF1722BC6C55E005FEF6B /* SDL_haptic.h */,
+				119CF1692BC6C55E005FEF6B /* SDL_hidapi.h */,
+				119CF17E2BC6C55E005FEF6B /* SDL_hints.h */,
+				119CF1742BC6C55E005FEF6B /* SDL_joystick.h */,
+				119CF1612BC6C55E005FEF6B /* SDL_keyboard.h */,
+				119CF1642BC6C55E005FEF6B /* SDL_keycode.h */,
+				119CF1712BC6C55E005FEF6B /* SDL_loadso.h */,
+				119CF1852BC6C55E005FEF6B /* SDL_locale.h */,
+				119CF18F2BC6C55E005FEF6B /* SDL_log.h */,
+				119CF1562BC6C55D005FEF6B /* SDL_main.h */,
+				119CF1532BC6C55D005FEF6B /* SDL_messagebox.h */,
+				119CF14D2BC6C55D005FEF6B /* SDL_metal.h */,
+				119CF17D2BC6C55E005FEF6B /* SDL_misc.h */,
+				119CF15D2BC6C55E005FEF6B /* SDL_mouse.h */,
+				119CF18B2BC6C55E005FEF6B /* SDL_mutex.h */,
+				119CF1512BC6C55D005FEF6B /* SDL_name.h */,
+				119CF1732BC6C55E005FEF6B /* SDL_opengl_glext.h */,
+				119CF14E2BC6C55D005FEF6B /* SDL_opengl.h */,
+				119CF1662BC6C55E005FEF6B /* SDL_opengles.h */,
+				119CF1682BC6C55E005FEF6B /* SDL_opengles2_gl2.h */,
+				119CF1462BC6C55D005FEF6B /* SDL_opengles2_gl2ext.h */,
+				119CF1442BC6C55D005FEF6B /* SDL_opengles2_gl2platform.h */,
+				119CF16D2BC6C55E005FEF6B /* SDL_opengles2_khrplatform.h */,
+				119CF1432BC6C55D005FEF6B /* SDL_opengles2.h */,
+				119CF15B2BC6C55D005FEF6B /* SDL_pixels.h */,
+				119CF1802BC6C55E005FEF6B /* SDL_platform.h */,
+				119CF16F2BC6C55E005FEF6B /* SDL_power.h */,
+				119CF1672BC6C55E005FEF6B /* SDL_quit.h */,
+				119CF1822BC6C55E005FEF6B /* SDL_rect.h */,
+				119CF14C2BC6C55D005FEF6B /* SDL_render.h */,
+				119CF1572BC6C55D005FEF6B /* SDL_revision.h */,
+				119CF1762BC6C55E005FEF6B /* SDL_rwops.h */,
+				119CF1832BC6C55E005FEF6B /* SDL_scancode.h */,
+				119CF1902BC6C55E005FEF6B /* SDL_sensor.h */,
+				119CF15F2BC6C55E005FEF6B /* SDL_shape.h */,
+				119CF14F2BC6C55D005FEF6B /* SDL_stdinc.h */,
+				119CF17A2BC6C55E005FEF6B /* SDL_surface.h */,
+				119CF1652BC6C55E005FEF6B /* SDL_system.h */,
+				119CF1782BC6C55E005FEF6B /* SDL_syswm.h */,
+				119CF17C2BC6C55E005FEF6B /* SDL_test_assert.h */,
+				119CF1502BC6C55D005FEF6B /* SDL_test_common.h */,
+				119CF15C2BC6C55D005FEF6B /* SDL_test_compare.h */,
+				119CF1842BC6C55E005FEF6B /* SDL_test_crc32.h */,
+				119CF1862BC6C55E005FEF6B /* SDL_test_font.h */,
+				119CF1752BC6C55E005FEF6B /* SDL_test_fuzzer.h */,
+				119CF1602BC6C55E005FEF6B /* SDL_test_harness.h */,
+				119CF16C2BC6C55E005FEF6B /* SDL_test_images.h */,
+				119CF1582BC6C55D005FEF6B /* SDL_test_log.h */,
+				119CF1472BC6C55D005FEF6B /* SDL_test_md5.h */,
+				119CF1592BC6C55D005FEF6B /* SDL_test_memory.h */,
+				119CF14B2BC6C55D005FEF6B /* SDL_test_random.h */,
+				119CF1772BC6C55E005FEF6B /* SDL_test.h */,
+				119CF1492BC6C55D005FEF6B /* SDL_thread.h */,
+				119CF16A2BC6C55E005FEF6B /* SDL_timer.h */,
+				119CF1522BC6C55D005FEF6B /* SDL_touch.h */,
+				119CF18A2BC6C55E005FEF6B /* SDL_types.h */,
+				119CF16B2BC6C55E005FEF6B /* SDL_version.h */,
+				119CF18C2BC6C55E005FEF6B /* SDL_video.h */,
+				119CF1482BC6C55D005FEF6B /* SDL_vulkan.h */,
+				119CF18E2BC6C55E005FEF6B /* SDL.h */,
+				119CF13F2BC6C520005FEF6B /* libSDL2-2.0.0.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +264,7 @@
 				119CF1302BC6C46F005FEF6B /* Sources */,
 				119CF1312BC6C46F005FEF6B /* Frameworks */,
 				119CF1322BC6C46F005FEF6B /* CopyFiles */,
+				119CF1422BC6C520005FEF6B /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -119,7 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119CF1932BC6CB45005FEF6B /* matrix.cpp in Sources */,
 				119CF1382BC6C46F005FEF6B /* main.cpp in Sources */,
+				119CF1972BC6DA2D005FEF6B /* neural_network.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,9 +439,15 @@
 		119CF13C2BC6C46F005FEF6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "neural-network/neural-network.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YCX9JB227S;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /opt/homebrew/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/sdl2/2.30.2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -254,9 +455,15 @@
 		119CF13D2BC6C46F005FEF6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "neural-network/neural-network.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YCX9JB227S;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /opt/homebrew/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/sdl2/2.30.2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
