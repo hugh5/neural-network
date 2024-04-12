@@ -78,3 +78,5 @@ Neural Network:
     Layer 2 to Ouput Layer (last column is bias):
 | 4.474515 -4.375819 -1.083414 -2.010570 5.593890 -3.955553 -4.367189 3.400599 -1.701552 |
 ```
+
+![alt text](network.png)
