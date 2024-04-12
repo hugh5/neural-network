@@ -8,6 +8,7 @@
 #include "matrix.hpp"
 
 #include <iostream>
+#include <format>
 #include <iomanip>
 #include <cstdlib>
 
@@ -35,24 +36,34 @@ int Matrix::numCols() const {
     return cols;
 }
 
-std::vector<std::vector<double>> Matrix::getData() const {
-    return data;
+double Matrix::generateBinomial() {
+    // Set up random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<double> dis(0.0, 1.0);
+
+    // Generate two independent standard normal random numbers
+    double u1 = dis(gen);
+    double u2 = dis(gen);
+
+    // Box-Muller transform
+    double z0 = sqrt(-2.0 * log(u1)) * cos(2.0 * M_PI * u2);
+
+    return z0;
 }
 
-Matrix Matrix::transpose() const {
-    Matrix result(cols, rows);
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            result(j, i) = data[i][j];
-        }
-    }
-    return result;
+std::string Matrix::dimension() const {
+    return std::format("({} x {})", rows, cols);
+}
+
+std::vector<std::vector<double>> Matrix::getData() const {
+    return data;
 }
 
 void Matrix::randomize() {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            data[i][j] = (double) rand() / RAND_MAX; // Random number between 0 and 1
+            data[i][j] = generateBinomial();
         }
     }
 }
@@ -73,38 +84,52 @@ void Matrix::scalarMultiply(double scalar) {
     }
 }
 
-void Matrix::add(const Matrix& other) {
+Matrix Matrix::transpose() const {
+    Matrix result(cols, rows);
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            result(j, i) = data[i][j];
+        }
+    }
+    return result;
+}
+
+Matrix Matrix::add(const Matrix& other) const {
     if (rows != other.rows || cols != other.cols) {
         std::cerr << "ERROR: Matrix dimensions do not match for addition." << std::endl;
-        return;
+        return Matrix();
     }
+    Matrix result(rows, cols);
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            data[i][j] += other(i, j);
+            result(i, j) = data[i][j] + other(i, j);
         }
     }
+    return result;
 }
 
-void Matrix::subtract(const Matrix& other) {
+Matrix Matrix::subtract(const Matrix& other) const {
     if (rows != other.rows || cols != other.cols) {
         std::cerr << "ERROR: Matrix dimensions do not match for subtraction." << std::endl;
-        return;
+        return Matrix();
     }
+    Matrix result(rows, cols);
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            data[i][j] -= other(i, j);
+            result(i, j) = data[i][j] - other(i, j);
         }
     }
+    return result;
 }
 
-void Matrix::multiply(const Matrix& other) {
+Matrix Matrix::multiply(const Matrix& other) const {
     if (cols != other.rows) {
         std::cerr << "ERROR: Matrix dimensions do not match for multiplication." << std::endl;
-        return;
+        std::cerr << std::format("Multiplying {} with {}", dimension(), other.dimension()) << std::endl;
+        return Matrix();
     }
 
     Matrix result(rows, other.cols);
-
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < other.cols; ++j) {
             double sum = 0;
@@ -114,14 +139,50 @@ void Matrix::multiply(const Matrix& other) {
             result(i, j) = sum;
         }
     }
-
-    *this = result;
+    return result;
 }
 
-Matrix Matrix::multiply(const Matrix& a, const Matrix& b) {
-    Matrix result = a;
-    result.multiply(b);
+Matrix Matrix::elemntWiseMultiply(const Matrix& other) const {
+    if (rows != other.rows || cols != other.cols) {
+        std::cerr << "ERROR: Matrix dimensions do not match for multiplication." << std::endl;
+        std::cerr << std::format("Element wise multiplying {} with {}", dimension(), other.dimension()) << std::endl;
+        return Matrix();
+    }
+    Matrix result(rows, cols);
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            result(i, j) = data[i][j] * other(i, j);;
+        }
+    }
     return result;
+    
+}
+
+void Matrix::appendColum(double value) {
+    for (int i = 0; i < rows; ++i) {
+        data[i].push_back(value);
+    }
+    cols++;
+}
+
+void Matrix::appendRow(double value) {
+    data.push_back(std::vector<double>(cols, value));
+    rows++;
+}
+
+std::vector<double> Matrix::popRow() {
+    std::vector<double> ret = data.back();
+    data.pop_back();
+    rows--;
+    return ret;
+}
+
+void Matrix::map(std::function<double(double)> func) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            data[i][j] = func(data[i][j]);
+        }
+    }
 }
 
 double& Matrix::operator()(int row, int col) {
@@ -133,30 +194,25 @@ const double& Matrix::operator()(int row, int col) const {
 }
 
 Matrix Matrix::operator+(const Matrix& other) const {
-    Matrix result = *this;
-    result.add(other);
+    Matrix result = (*this).add(other);
     return result;
 }
 
 Matrix Matrix::operator-(const Matrix& other) const {
-    Matrix result = *this;
-    result.subtract(other);
+    Matrix result = (*this).subtract(other);
     return result;
 }
 
 Matrix Matrix::operator*(const Matrix& other) const {
-    Matrix result = *this;
-    result.multiply(other);
-    return result;
-}
-
-Matrix Matrix::operator*(double scalar) const {
-    Matrix result = *this;
-    result.scalarMultiply(scalar);
+    Matrix result = (*this).multiply(other);
     return result;
 }
 
 std::ostream& operator<<(std::ostream& os, const Matrix& matrix) {
+    if (matrix.numRows() == 0 && matrix.numCols() == 0) {
+        os << "{Empty Matrix}" << std::endl;
+        goto end;
+    }
     os << std::setprecision(6) << std::fixed;
     for (int i = 0; i < matrix.numRows(); ++i) {
         os << "| ";
@@ -165,5 +221,6 @@ std::ostream& operator<<(std::ostream& os, const Matrix& matrix) {
         }
         os << "|" << std::endl;
     }
+    end:
     return os;
 }

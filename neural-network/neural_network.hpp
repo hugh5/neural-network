@@ -9,19 +9,27 @@
 #define neural_network_hpp
 
 #include "matrix.hpp"
+#include <vector>
+#include <random>
 
 class NeuralNetwork {
 private:
-    int inputNodes;
-    int hiddenNodes;
-    int outputNodes;
-    double learningRate;
-    Matrix weightsInputHidden;
-    Matrix weightsHiddenOutput;
+    std::vector<int> sizes;
+    std::vector<Matrix> weights;
+    std::vector<Matrix> activations;
+    
+    static double sigmoid(double x);
+    static double dsigmoid(double x);
+    static std::vector<int> randomOrder(size_t n);
+    
+    void backPropogate(Matrix result, std::vector<double> expected, double learningRate);
 
 public:
-    NeuralNetwork(int inputNodes, int hiddenNodes, int outputNodes, double learningRate);
-    // Other methods will be added later
+    NeuralNetwork(int inputNodes, std::vector<int> hiddenLayerSizes, int outputNodes);
+    Matrix feedForward(std::vector<double> input);
+    void train(std::vector<std::vector<double>> inputs, std::vector<std::vector<double>> outputs, double learningRate);
+    
+    friend std::ostream& operator<<(std::ostream& os, const NeuralNetwork& network);
 };
 
 #endif /* neural_network_hpp */

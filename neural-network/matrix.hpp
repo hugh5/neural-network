@@ -9,13 +9,17 @@
 #define matrix_hpp
 
 #include <iostream>
+#include <random>
 #include <vector>
+#include <functional>
 
 class Matrix {
 private:
     std::vector<std::vector<double>> data;
     int rows;
     int cols;
+    
+    static double generateBinomial();
 
 public:
     // Constructors
@@ -27,19 +31,22 @@ public:
     // Accessors
     int numRows() const;
     int numCols() const;
+    std::string dimension() const;
     std::vector<std::vector<double>> getData() const;
 
     // Basic operations
-    Matrix transpose() const;
     void randomize();
     void scalarAdd(double scalar);
     void scalarMultiply(double scalar);
-    void add(const Matrix& other);
-    void subtract(const Matrix& other);
-    void multiply(const Matrix& other);
-
-    // Static methods
-    static Matrix multiply(const Matrix& a, const Matrix& b);
+    Matrix transpose() const;
+    Matrix add(const Matrix& other) const;
+    Matrix subtract(const Matrix& other) const;
+    Matrix multiply(const Matrix& other) const;
+    Matrix elemntWiseMultiply(const Matrix& other) const;
+    void appendColum(double value);
+    void appendRow(double value);
+    std::vector<double> popRow();
+    void map(std::function<double(double)> func);
 
     // Operator overloads
     double& operator()(int row, int col);
@@ -47,7 +54,7 @@ public:
     Matrix operator+(const Matrix& other) const;
     Matrix operator-(const Matrix& other) const;
     Matrix operator*(const Matrix& other) const;
-    Matrix operator*(double scalar) const;
+
     friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix);
 };
 
