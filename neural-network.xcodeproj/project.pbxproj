@@ -38,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1188AE7A2BC9312500AF56D9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		119CF1342BC6C46F005FEF6B /* neural-network */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "neural-network"; sourceTree = BUILT_PRODUCTS_DIR; };
 		119CF1372BC6C46F005FEF6B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		119CF13F2BC6C520005FEF6B /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../opt/homebrew/Cellar/sdl2/2.30.2/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 		119CF12B2BC6C46F005FEF6B = {
 			isa = PBXGroup;
 			children = (
+				1188AE7A2BC9312500AF56D9 /* README.md */,
 				119CF1362BC6C46F005FEF6B /* neural-network */,
 				119CF1352BC6C46F005FEF6B /* Products */,
 				119CF13E2BC6C51F005FEF6B /* Frameworks */,
