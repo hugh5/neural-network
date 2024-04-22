@@ -12,6 +12,7 @@
 		119CF1412BC6C520005FEF6B /* libSDL2-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 119CF13F2BC6C520005FEF6B /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		119CF1932BC6CB45005FEF6B /* matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 119CF1912BC6CB45005FEF6B /* matrix.cpp */; };
 		119CF1972BC6DA2D005FEF6B /* neural_network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 119CF1952BC6DA2D005FEF6B /* neural_network.cpp */; };
+		11F176922BC96F63008E8B6C /* xor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F176902BC96F63008E8B6C /* xor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -125,6 +126,8 @@
 		119CF1942BC6CF84005FEF6B /* neural-network.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "neural-network.entitlements"; sourceTree = "<group>"; };
 		119CF1952BC6DA2D005FEF6B /* neural_network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = neural_network.cpp; sourceTree = "<group>"; };
 		119CF1962BC6DA2D005FEF6B /* neural_network.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = neural_network.hpp; sourceTree = "<group>"; };
+		11F176902BC96F63008E8B6C /* xor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xor.cpp; sourceTree = "<group>"; };
+		11F176912BC96F63008E8B6C /* xor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = xor.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				119CF1922BC6CB45005FEF6B /* matrix.hpp */,
 				119CF1952BC6DA2D005FEF6B /* neural_network.cpp */,
 				119CF1962BC6DA2D005FEF6B /* neural_network.hpp */,
+				11F176902BC96F63008E8B6C /* xor.cpp */,
+				11F176912BC96F63008E8B6C /* xor.hpp */,
 			);
 			path = "neural-network";
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119CF1932BC6CB45005FEF6B /* matrix.cpp in Sources */,
+				11F176922BC96F63008E8B6C /* xor.cpp in Sources */,
 				119CF1382BC6C46F005FEF6B /* main.cpp in Sources */,
 				119CF1972BC6DA2D005FEF6B /* neural_network.cpp in Sources */,
 			);

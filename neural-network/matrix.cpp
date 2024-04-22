@@ -7,10 +7,6 @@
 
 #include "matrix.hpp"
 
-#include <iostream>
-#include <format>
-#include <iomanip>
-#include <cstdlib>
 
 Matrix::Matrix() : rows(0), cols(0) {}
 
@@ -40,16 +36,18 @@ double Matrix::generateBinomial() {
     // Set up random number generator
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<double> dis(0.0, 1.0);
+//    std::uniform_real_distribution<double> dis(0.0, 1.0);
+    std::uniform_real_distribution<double> dis(0.0, 2.0);
 
     // Generate two independent standard normal random numbers
     double u1 = dis(gen);
-    double u2 = dis(gen);
+//    double u2 = dis(gen);
 
     // Box-Muller transform
-    double z0 = sqrt(-2.0 * log(u1)) * cos(2.0 * M_PI * u2);
+//    double z0 = sqrt(-2.0 * log(u1)) * cos(2.0 * M_PI * u2);
 
-    return z0;
+//    return z0;
+    return u1 - 1;
 }
 
 std::string Matrix::dimension() const {

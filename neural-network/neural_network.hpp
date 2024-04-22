@@ -20,14 +20,14 @@ private:
     
     static double sigmoid(double x);
     static double dsigmoid(double x);
-    static std::vector<int> randomOrder(size_t n);
     
-    void backPropogate(Matrix result, std::vector<double> expected, double learningRate);
 
 public:
     NeuralNetwork(int inputNodes, std::vector<int> hiddenLayerSizes, int outputNodes);
     Matrix feedForward(std::vector<double> input);
+    void backPropogate(Matrix result, std::vector<double> expected, double learningRate);
     void train(std::vector<std::vector<double>> inputs, std::vector<std::vector<double>> outputs, double learningRate);
+    static std::vector<int> randomOrder(size_t n);
     
     friend std::ostream& operator<<(std::ostream& os, const NeuralNetwork& network);
 };
