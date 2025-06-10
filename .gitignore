@@ -1,0 +1,9 @@
+//
+//  .gitignore
+//  neural-network
+//
+//  Created by Hugh Drummond on 10/6/2025.
+//
+
+neural-network.xcodeproj/xcshareddata/
+neural-network.xcodeproj/xcuserdata/hughdrummond.xcuserdatad/xcdebugger/

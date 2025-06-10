@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1133ED282DF5B96A0042188A /* libSDL2_ttf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1133ED252DF5B4D10042188A /* libSDL2_ttf.dylib */; };
+		1133ED292DF5B96A0042188A /* libSDL2_ttf.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 1133ED252DF5B4D10042188A /* libSDL2_ttf.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1133ED2C2DF5B98F0042188A /* neural_vis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1133ED2B2DF5B98F0042188A /* neural_vis.cpp */; };
 		119CF1382BC6C46F005FEF6B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 119CF1372BC6C46F005FEF6B /* main.cpp */; };
-		119CF1402BC6C520005FEF6B /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 119CF13F2BC6C520005FEF6B /* libSDL2-2.0.0.dylib */; };
-		119CF1412BC6C520005FEF6B /* libSDL2-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 119CF13F2BC6C520005FEF6B /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		119CF1932BC6CB45005FEF6B /* matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 119CF1912BC6CB45005FEF6B /* matrix.cpp */; };
-		119CF1972BC6DA2D005FEF6B /* neural_network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 119CF1952BC6DA2D005FEF6B /* neural_network.cpp */; };
-		11F176922BC96F63008E8B6C /* xor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F176902BC96F63008E8B6C /* xor.cpp */; };
+		11B5FB5F2DEF129300596C47 /* libSDL2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B5FB5E2DEF129300596C47 /* libSDL2.dylib */; };
+		11B5FB602DEF129300596C47 /* libSDL2.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 11B5FB5E2DEF129300596C47 /* libSDL2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,13 +25,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
-		119CF1422BC6C520005FEF6B /* Embed Libraries */ = {
+		11B5FB612DEF129300596C47 /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				119CF1412BC6C520005FEF6B /* libSDL2-2.0.0.dylib in Embed Libraries */,
+				1133ED292DF5B96A0042188A /* libSDL2_ttf.dylib in Embed Libraries */,
+				11B5FB602DEF129300596C47 /* libSDL2.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 1;
@@ -39,6 +40,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11324F972DF8640E000EE9DD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1133ED202DF53DE60042188A /* problem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = problem.hpp; sourceTree = "<group>"; };
+		1133ED252DF5B4D10042188A /* libSDL2_ttf.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSDL2_ttf.dylib; path = ../../../../../opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib/libSDL2_ttf.dylib; sourceTree = "<group>"; };
+		1133ED2A2DF5B98F0042188A /* neural_vis.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = neural_vis.hpp; sourceTree = "<group>"; };
+		1133ED2B2DF5B98F0042188A /* neural_vis.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = neural_vis.cpp; sourceTree = "<group>"; };
 		1188AE7A2BC9312500AF56D9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		119CF1342BC6C46F005FEF6B /* neural-network */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "neural-network"; sourceTree = BUILT_PRODUCTS_DIR; };
 		119CF1372BC6C46F005FEF6B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -121,13 +127,11 @@
 		119CF18E2BC6C55E005FEF6B /* SDL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL.h; sourceTree = "<group>"; };
 		119CF18F2BC6C55E005FEF6B /* SDL_log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_log.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_log.h; sourceTree = "<group>"; };
 		119CF1902BC6C55E005FEF6B /* SDL_sensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_sensor.h; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.2/include/SDL2/SDL_sensor.h; sourceTree = "<group>"; };
-		119CF1912BC6CB45005FEF6B /* matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = matrix.cpp; sourceTree = "<group>"; };
 		119CF1922BC6CB45005FEF6B /* matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = matrix.hpp; sourceTree = "<group>"; };
 		119CF1942BC6CF84005FEF6B /* neural-network.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "neural-network.entitlements"; sourceTree = "<group>"; };
-		119CF1952BC6DA2D005FEF6B /* neural_network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = neural_network.cpp; sourceTree = "<group>"; };
 		119CF1962BC6DA2D005FEF6B /* neural_network.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = neural_network.hpp; sourceTree = "<group>"; };
-		11F176902BC96F63008E8B6C /* xor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = xor.cpp; sourceTree = "<group>"; };
-		11F176912BC96F63008E8B6C /* xor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = xor.hpp; sourceTree = "<group>"; };
+		11B5FB5A2DEF11F000596C47 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../opt/homebrew/Cellar/sdl2/2.30.3/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		11B5FB5E2DEF129300596C47 /* libSDL2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSDL2.dylib; path = ../../../../../opt/homebrew/Cellar/sdl2/2.30.3/lib/libSDL2.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				119CF1402BC6C520005FEF6B /* libSDL2-2.0.0.dylib in Frameworks */,
+				1133ED282DF5B96A0042188A /* libSDL2_ttf.dylib in Frameworks */,
+				11B5FB5F2DEF129300596C47 /* libSDL2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +150,7 @@
 		119CF12B2BC6C46F005FEF6B = {
 			isa = PBXGroup;
 			children = (
+				11324F972DF8640E000EE9DD /* .gitignore */,
 				1188AE7A2BC9312500AF56D9 /* README.md */,
 				119CF1362BC6C46F005FEF6B /* neural-network */,
 				119CF1352BC6C46F005FEF6B /* Products */,
@@ -165,12 +171,11 @@
 			children = (
 				119CF1942BC6CF84005FEF6B /* neural-network.entitlements */,
 				119CF1372BC6C46F005FEF6B /* main.cpp */,
-				119CF1912BC6CB45005FEF6B /* matrix.cpp */,
 				119CF1922BC6CB45005FEF6B /* matrix.hpp */,
-				119CF1952BC6DA2D005FEF6B /* neural_network.cpp */,
 				119CF1962BC6DA2D005FEF6B /* neural_network.hpp */,
-				11F176902BC96F63008E8B6C /* xor.cpp */,
-				11F176912BC96F63008E8B6C /* xor.hpp */,
+				1133ED202DF53DE60042188A /* problem.hpp */,
+				1133ED2A2DF5B98F0042188A /* neural_vis.hpp */,
+				1133ED2B2DF5B98F0042188A /* neural_vis.cpp */,
 			);
 			path = "neural-network";
 			sourceTree = "<group>";
@@ -178,6 +183,9 @@
 		119CF13E2BC6C51F005FEF6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1133ED252DF5B4D10042188A /* libSDL2_ttf.dylib */,
+				11B5FB5E2DEF129300596C47 /* libSDL2.dylib */,
+				11B5FB5A2DEF11F000596C47 /* libSDL2-2.0.0.dylib */,
 				119CF1792BC6C55E005FEF6B /* begin_code.h */,
 				119CF17B2BC6C55E005FEF6B /* close_code.h */,
 				119CF1882BC6C55E005FEF6B /* SDL_assert.h */,
@@ -271,7 +279,7 @@
 				119CF1302BC6C46F005FEF6B /* Sources */,
 				119CF1312BC6C46F005FEF6B /* Frameworks */,
 				119CF1322BC6C46F005FEF6B /* CopyFiles */,
-				119CF1422BC6C520005FEF6B /* Embed Libraries */,
+				11B5FB612DEF129300596C47 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -289,7 +297,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					119CF1332BC6C46F005FEF6B = {
 						CreatedOnToolsVersion = 15.3;
@@ -319,10 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				119CF1932BC6CB45005FEF6B /* matrix.cpp in Sources */,
-				11F176922BC96F63008E8B6C /* xor.cpp in Sources */,
+				1133ED2C2DF5B98F0042188A /* neural_vis.cpp in Sources */,
 				119CF1382BC6C46F005FEF6B /* main.cpp in Sources */,
-				119CF1972BC6DA2D005FEF6B /* neural_network.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +369,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -424,6 +431,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -449,12 +457,14 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "neural-network/neural-network.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = YCX9JB227S;
 				ENABLE_HARDENED_RUNTIME = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = /opt/homebrew/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/homebrew/Cellar/sdl2/2.30.2/lib,
+					/opt/homebrew/opt/sdl2/lib,
+					/opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -465,12 +475,14 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "neural-network/neural-network.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = YCX9JB227S;
 				ENABLE_HARDENED_RUNTIME = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = /opt/homebrew/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/homebrew/Cellar/sdl2/2.30.2/lib,
+					/opt/homebrew/opt/sdl2/lib,
+					/opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
