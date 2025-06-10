@@ -1,82 +1,134 @@
-# Neural Network
+# Neural Network Visualizer
 
-## Description
-This project implements a neural network for classification tasks. It provides a flexible and customizable framework for training and evaluating neural networks on various datasets.
-Written in C++, the project provides unoptimized implementations of the neural network architecture, backpropagation algorithm, and optimization techniques. The project is designed to be educational and easy to understand, making it suitable for beginners who want to learn about neural networks and deep learning.
+A real-time neural network training visualizer built in C++ that demonstrates how neural networks learn to solve classification problems through interactive visual feedback.
 
 ## Features
-- Multi-layer perceptron architecture
-- Support for different activation functions (e.g., sigmoid, ReLU)
-- Backpropagation algorithm for training
-- Mini-batch gradient descent optimization
-- Cross-entropy loss function
-- Regularization techniques (e.g., L2 regularization)
-- Dropout regularization
-- Easy-to-use API for model creation, training, and evaluation
 
-## XOR Classification Example
+- **Real-time Learning Visualization**: Watch decision boundaries evolve as the network trains, showing how AI learns complex patterns
+- **Custom Neural Network Implementation**: Built from scratch a complete neural network implementation in C++ with custom matrix operations, backpropagation, and gradient descent - no external ML libraries
+- **Demonstrates Classic ML Problems**: XOR logic gates, circle classification, and interleaved spiral separation
+- **Solves the XOR Problem: Demonstrates non-linear classification that stumped early AI researchers, requiring hidden layers to solve
+- **Performance Metrics**: Live display of training epochs, error rates, and improvement metrics
 
-The following code snippet demonstrates how to create a neural network model, train it on the XOR dataset, and evaluate its performance.
+## Demo
 
-```cpp
-#include "neural_network.h"
+### XOR Problem
+![XOR Demo](media/xor_demo.gif)
 
-int main() {
-    srand((unsigned)time(NULL));
-    int inputNodes = 2;
-    std::vector<int> hiddenLayerSizes = {8, 8};
-    int outputNodes = 1;
-    NeuralNetwork network(inputNodes, hiddenLayerSizes, outputNodes);
-        
-    std::vector<std::vector<double>> inputs( {{0, 0}, {0, 1}, {1, 0}, {1, 1}} );
-    std::vector<std::vector<double>> outputs( {{0}, {1}, {1}, {0}} );
-    double learningRate = 0.1;
-    network.train(inputs, outputs, learningRate);
-    std::cout << network << std::endl;
+A classic non-linearly separable problem that requires hidden layers to solve.
 
-    for (int i = 0; i < inputs.size(); ++i) {
-        std::cout << network.feedForward(inputs[i]) << std::endl;
-    }
-    
-    return 0;
-}
+### Circle Classification
+![Circle Demo](media/circle_demo.gif)
+
+Classifies points as inside or outside a circle, demonstrating boundary learning.
+
+### Spiral Classification
+![Spiral Demo](media/spiral_demo.gif)
+
+The most challenging problem featuring two interleaved spirals.
+
+## Technical Implementation
+
+### Neural Network Architecture
+- **Feedforward Network**: Fully connected layers with sigmoid activation
+- **Backpropagation**: Custom implementation of gradient descent
+- **Matrix Operations**: Efficient matrix class for neural network computations
+- **Configurable Architecture**: Easy to modify layer sizes and learning rates
+
+### Key Components
+- `NeuralNetwork`: Core neural network implementation with training algorithms
+- `Matrix`: Custom matrix class optimized for neural network operations
+- `Problem`: Abstract base class for different classification problems
+- `NeuralVis`: SDL2-based visualization engine
+
+### Supported Problems
+1. **XOR Problem** (2-8-8-1 architecture)
+   - Learning Rate: 0.7
+   - Classic logic gate problem
+
+2. **Circle Classification** (2-8-16-8-1 architecture)
+   - Learning Rate: 0.15
+   - Boundary detection problem
+
+3. **Spiral Classification** (2-8-8-1 architecture)
+   - Learning Rate: 0.35
+   - Complex non-linear classification
+
+## Project Structure
+
+```
+neural-network/
+├── main.cpp              # Entry point and problem selection
+├── neural_network.hpp    # Core neural network implementation
+├── matrix.hpp            # Matrix operations for neural computations
+├── neural_vis.hpp        # SDL2 visualization engine
+├── neural_vis.cpp        # Visualization implementation
+├── problem.hpp           # Problem definitions and rendering
+└── README.md            # This file
 ```
 
-Example output:
-```
-Input: [0, 0], Output: [0.002312], Expected: [0]
-Input: [0, 1], Output: [0.999983], Expected: [1]
-Input: [1, 0], Output: [0.984202], Expected: [1]
-Input: [1, 1], Output: [0.015086], Expected: [0]
+## Algorithm Details
+
+### Forward Propagation
+1. Input layer receives 2D coordinates (x, y)
+2. Hidden layers apply weighted sums with sigmoid activation
+3. Output layer produces classification probability
+
+### Backpropagation
+1. Calculate output error using mean squared error
+2. Propagate error backwards through network layers
+3. Update weights and biases using gradient descent
+4. Repeat for each training example
+
+### Visualization
+- **Decision Boundary**: Background color intensity shows network confidence
+- **Training Points**: Colored dots show actual classification targets
+- **Real-time Metrics**: Display current epoch, error rate, and improvement
+
+## Educational Value
+
+This project demonstrates:
+- **Neural Network Fundamentals**: Forward/backward propagation implementation
+- **Gradient Descent**: Weight optimization through error minimization
+- **Non-linear Classification**: How hidden layers enable complex decision boundaries
+- **Real-time Learning**: Visual feedback of the training process
+- **C++ System Programming**: Custom data structures and graphics programming
+
+## Building and Running
+
+### Prerequisites
+- C++17 compatible compiler
+- SDL2 development libraries
+- SDL2_ttf for text rendering
+- macOS (for font path, easily adaptable to other platforms)
+
+### Build Instructions
+```bash
+# Install dependencies (macOS with Homebrew)
+brew install sdl2 sdl2_ttf
+
+# Clone the repository
+git clone https://github.com/yourusername/neural-network-visualizer.git
+cd neural-network-visualizer
+
+# Compile
+g++ -std=c++17 -I/opt/homebrew/include -L/opt/homebrew/lib \
+    -lSDL2 -lSDL2_ttf -framework Accelerate \
+    main.cpp neural_vis.cpp -o neural_vis
+
+# Run
+./neural_vis
 ```
 
-Neural Network Architecture:
-```
-Neural Network:
-  Layer Sizes: 2 -> 8 -> 8 -> 1
-  Weights:
-    Input Layer to Layer 1 (last column is bias):
-| -0.625167 0.147978 -1.854169 |
-| -0.520373 -6.109410 -2.146492 |
-| 0.065946 1.315157 -2.103537 |
-| 67.132578 -58.841079 -1.559796 |
-| 0.119602 1.275017 -2.192054 |
-| 60.721829 -52.557729 -1.561684 |
-| 21.261541 18.853511 -17.473507 |
-| -192.100493 206.452343 -8.920780 |
+### Controls
+- **Spacebar**: Start/Stop training
+- **ESC**: Exit application
 
-    Layer 1 to Layer 2  (last column is bias):
-| 0.137569 -0.566637 -0.703963 -6.747726 0.140288 -7.117362 13.931150 -7.698649 0.083292 |
-| -1.851208 0.222969 1.477496 4.495154 0.228193 5.174373 -11.973248 2.799900 -2.024887 |
-| -1.219001 -0.549006 -0.718055 2.434078 -0.517637 -0.064154 -2.361457 0.633892 -1.737328 |
-| 0.333656 0.257918 -0.793426 -0.142955 2.117319 1.918867 -3.843097 1.440009 -0.849963 |
-| -1.203817 -1.148578 -0.064952 -7.913046 -0.768680 -8.560919 17.074344 -8.971691 -0.170793 |
-| 0.304743 0.576414 -1.031199 4.654582 -0.465309 4.566832 -13.488617 4.031362 -1.851032 |
-| -0.754264 -0.276401 -0.116121 6.719684 0.053953 5.707353 -18.859614 7.064161 -2.626101 |
-| -0.957187 -0.465993 -0.859886 -6.692644 0.084186 -4.125306 9.890288 -6.435340 1.374595 |
+## Future Enhancements
 
-    Layer 2 to Ouput Layer (last column is bias):
-| 4.474515 -4.375819 -1.083414 -2.010570 5.593890 -3.955553 -4.367189 3.400599 -1.701552 |
-```
-
-![alt text](network.png)
+- [ ] Additional activation functions (ReLU, tanh)
+- [ ] Momentum and adaptive learning rates
+- [ ] Batch processing optimization
+- [ ] More complex problem types
+- [ ] Network architecture visualization
+- [ ] Training data export/import
